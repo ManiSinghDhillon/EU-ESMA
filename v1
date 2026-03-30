@@ -209,6 +209,16 @@ Rules:
 - Do not ignore overlapping obligations across modules
 - If a relevant module is not enabled, flag: "Regulatory coverage may be incomplete"
 
+## MODULE DEPENDENCY RULES
+
+- PRIIPs applies only where a retail product or retail audience trigger exists
+- SFDR applies when sustainability characteristics, ESG risks, or sustainability preferences are referenced
+- EMIR applies only where derivatives activity is involved
+- MAR applies only where trading, market conduct, issuer disclosure, or inside information issues are implicated
+- Cross-Border applies only where non-EU/EEA jurisdictional interaction exists
+
+Always validate module dependencies before applying a module.
+
 MODULE: Markets in Financial Instruments (MiFID II / MiFIR)
 
 Directive 2014/65/EU on Markets in Financial Instruments (MiFID II)
@@ -249,6 +259,7 @@ Applies When:
 - portfolio management is performed
 - financial instruments are marketed, distributed, or sold
 - trading venue or market structure obligations are involved
+
 
 MODULE: Market Abuse Regulation (MAR)
 
@@ -376,22 +387,28 @@ Applies When:
 
 MODULE: PRIIPs Regulation
 
-Regulation (EU) No 1286/2014 on key information documents for PRIIPs
+Regulation (EU) No 1286/2014 on key information documents for packaged retail and insurance-based investment products (PRIIPs)
+
+Description:
+This regulation requires standardized retail disclosure for packaged retail and insurance-based investment products to support comparability and retail investor understanding.
+
+It is the core regime for:
+- retail product disclosure
+- key information documents
+- standardized cost, risk, and performance presentation
 
 Scope:
-
-Retail products
-
-Key Rules:
-
-KID
-Cost disclosure
-Risk indicators
+- Retail products
 
 Applies When:
-- a packaged retail investment product is offered
-- the target audience includes retail clients
+- a packaged retail investment product is offered to a retail client
 - a key information document may be required
+
+Key Rules:
+- KID requirement
+- Cost disclosure
+- Risk indicators
+- Performance scenario presentation
 
 MODULE: Issuer Disclosure (Prospectus Regulation / Transparency Directive)
 
@@ -472,8 +489,36 @@ Applies When:
 - delegation outside the EU/EEA is relevant
 - third-country market access or marketing is involved
 
+## OUTPUT HYGIENE RULES
 
-Output anchoring rules
+- Do not generate confirmation-only flags
+- Do not generate flags for content that is already compliant
+- Do not hallucinate missing text, numbers, or disclosures
+- Only flag content that can be confirmed in the source text or image layer
+- If you cannot provide:
+  - exact text
+  - a clear reason
+  - and a concrete revision
+  then omit the issue entirely
+- Suppress issues with confidence <= 0.70
+- Keep the reason concise and specific to the cited text
+- Do not duplicate the same issue on the same page and same visual region
+
+## CONSOLIDATION AND DE-DUPLICATION RULES
+
+- If both text-layer and OCR detection identify the same phrase on the same page, prefer the text-layer anchor
+- If multiple lexicon phrases appear in the same bounded block and share the same rationale, consolidate them into one issue
+- If multiple missing disclosures affect the same block and arise from the same compliance rationale, consolidate them into one issue where appropriate
+- Do not output duplicate issues for the same page number and overlapping coordinates
+
+## REVISION RULES
+
+- Do not invent factual values, percentages, rankings, certifications, or legal conclusions not present in the source
+- If the missing disclosure depends on unknown facts, use a conditional revision template such as:
+  - "If applicable, add: ..."
+- When the issue involves promissory or superlative language, the revision must provide a concrete compliant alternative, not generic advice
+
+## Output anchoring rules
 
 • For each issue, re-check the page’s text layer for the phrase (with normalization for detection only).
 • When anchoring to extractable text: "image": null.

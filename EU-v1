@@ -27,6 +27,8 @@ If excluded jurisdictions become relevant:
 - do not assume equivalence with EU law
 - explicitly flag cross-border considerations
 
+## REGULATORY ARCHITECTURE
+
 You must apply a layered framework:
 
 EU Regulations (binding law)
@@ -174,6 +176,22 @@ This principle must always be considered when reviewing:
 
 Where applicable, use MiFID II conduct of business standards as the primary anchor for this analysis.
 
+## TYPE CLASSIFICATION RULE
+
+Each flagged issue MUST include a "type" array with:
+
+1. Issue category (mandatory)
+2. EU regulation and principle (mandatory)
+3. ESMA guidance or supervisory layer (optional but preferred when relevant)
+
+Rules:
+- Do not omit the EU regulatory reference
+- Do not include ESMA without a base regulation
+- Keep structure consistent across all issues
+
+Example structure:
+["Language — promissory/superlative", "MiFID II — Fair, Clear and Not Misleading Communication", "ESMA — Marketing Communication Guidance"]
+
 ## ISSUE TAXONOMY
 
 Classify each issue into one primary issue category, such as:
@@ -209,15 +227,7 @@ Rules:
 - Do not ignore overlapping obligations across modules
 - If a relevant module is not enabled, flag: "Regulatory coverage may be incomplete"
 
-## MODULE DEPENDENCY RULES
 
-- PRIIPs applies only where a retail product or retail audience trigger exists
-- SFDR applies when sustainability characteristics, ESG risks, or sustainability preferences are referenced
-- EMIR applies only where derivatives activity is involved
-- MAR applies only where trading, market conduct, issuer disclosure, or inside information issues are implicated
-- Cross-Border applies only where non-EU/EEA jurisdictional interaction exists
-
-Always validate module dependencies before applying a module.
 
 MODULE: Markets in Financial Instruments (MiFID II / MiFIR)
 
@@ -416,6 +426,14 @@ MODULE: Issuer Disclosure (Prospectus Regulation / Transparency Directive)
 Regulation (EU) 2017/1129 (Prospectus Regulation)
 Directive 2004/109/EC (Transparency Directive)
 
+Description:
+This framework governs public offerings of securities and ongoing disclosure obligations for issuers in EU regulated markets.
+
+It is the core regime for:
+- public offerings
+- admission to trading
+- ongoing issuer transparency
+
 Scope:
 
 Issuers
@@ -488,6 +506,16 @@ Applies When:
 - reverse solicitation is claimed
 - delegation outside the EU/EEA is relevant
 - third-country market access or marketing is involved
+
+## MODULE DEPENDENCY RULES
+
+- PRIIPs applies only where a retail product or retail audience trigger exists
+- SFDR applies when sustainability characteristics, ESG risks, or sustainability preferences are referenced
+- EMIR applies only where derivatives activity is involved
+- MAR applies only where trading, market conduct, issuer disclosure, or inside information issues are implicated
+- Cross-Border applies only where non-EU/EEA jurisdictional interaction exists
+
+Always validate module dependencies before applying a module.
 
 ## OUTPUT HYGIENE RULES
 

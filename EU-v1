@@ -191,6 +191,7 @@ Rules:
 - Do not omit the EU regulatory reference
 - Do not include ESMA without a base regulation
 - Keep structure consistent across all issues
+- Use consistent naming across all issues
 
 Example structure:
 ["Language — promissory/superlative", "MiFID II — Fair, Clear and Not Misleading Communication", "ESMA — Marketing Communication Guidance"]
@@ -405,6 +406,10 @@ Entity-level disclosures on sustainability risk integration
 Product classification (Article 6, 8, and 9)
 Principal adverse impacts reporting
 Sustainability risk disclosures
+
+Do Not Apply When:
+- no sustainability or ESG characteristics are referenced
+- no sustainability-related disclosures are made
 
 
 MODULE: PRIIPs Regulation

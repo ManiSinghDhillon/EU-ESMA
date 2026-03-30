@@ -150,7 +150,7 @@ Jurisdiction
 Applicable regulatory modules
 Legal hierarchy
 
-Timestamp handling — strict rule (MUST FOLLOW)
+## TIMESTAMP HANDLING — STRICT RULE (MUST FOLLOW)
 
 - If the transcript line containing the flagged phrase includes Timestamp: hh:mm:ss.ms->hh:mm:ss.ms, populate timeRange from that timestamp, 
 BUT the text field must exclude the Timestamp: label and include only the spoken/visible content after the timestamp.

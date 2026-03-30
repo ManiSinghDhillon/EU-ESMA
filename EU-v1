@@ -93,7 +93,7 @@ Guidelines / Q&A / Opinions → treat as non-binding but authoritative superviso
 
 Always distinguish between binding obligations and supervisory expectations.
 
-Actor Identification
+## Actor Identification
 
 Identify the relevant actor(s):
 
@@ -111,7 +111,8 @@ Counterparty (derivatives)
 Research provider
 Product manufacturer / distributor
 Client / investor
-Role Determination
+
+## Role Determination
 
 Determine functional role:
 
@@ -127,14 +128,16 @@ Fund management
 Derivatives trading
 Issuer disclosure
 Market abuse handling
-Client Categorization (MiFID II)
+
+## Client Categorization (MiFID II)
 
 Always determine:
 
 Retail client
 Professional client (per se / elective)
 Eligible counterparty
-Core Instruction
+
+## Core Instruction
 
 Always determine:
 
@@ -249,6 +252,14 @@ Investment services
 Client relationships
 Trading and execution
 
+Applies When:
+- a firm provides investment advice
+- a firm executes or transmits orders
+- a client relationship exists involving investment services
+- portfolio management is performed
+- financial instruments are marketed, distributed, or sold
+- trading venue or market structure obligations are involved
+
 Key Rules:
 
 Client categorization (Retail / Professional / Eligible Counterparty)
@@ -262,14 +273,11 @@ Recordkeeping and reporting
 Transaction reporting to regulators
 Pre- and post-trade transparency
 
-Applies When:
-- a firm provides investment advice
-- a firm executes or transmits orders
-- a client relationship exists involving investment services
-- portfolio management is performed
-- financial instruments are marketed, distributed, or sold
-- trading venue or market structure obligations are involved
 
+Do Not Apply When:
+- no investment service or activity is provided
+- communication is purely internal
+- no financial instrument or client interaction exists
 
 MODULE: Market Abuse Regulation (MAR)
 
@@ -289,6 +297,13 @@ Scope:
 Market abuse
 Issuer obligations
 
+Applies When:
+- financial instruments admitted to trading are involved
+- inside information may exist
+- issuer disclosure obligations arise
+- trading activity could create misleading signals
+- suspicious transactions or orders are identified
+
 Key Rules:
 
 Identification and control of inside information
@@ -300,12 +315,6 @@ Insider list maintenance
 PDMR transaction reporting
 Suspicious Transaction and Order Reporting (STOR)
 
-Applies When:
-- financial instruments admitted to trading are involved
-- inside information may exist
-- issuer disclosure obligations arise
-- trading activity could create misleading signals
-- suspicious transactions or orders are identified
 
 MODULE: European Market Infrastructure Regulation (EMIR)
 
@@ -322,6 +331,12 @@ Scope:
 
 Derivatives transactions
 
+Applies When:
+- derivative contracts are entered into
+- clearing obligations may apply
+- margin or collateral obligations may apply
+- trade reporting to a trade repository is required
+
 Key Rules:
 
 Counterparty classification (Financial Counterparty / Non-Financial Counterparty)
@@ -330,11 +345,6 @@ Margin and collateral requirements
 Trade reporting to trade repositories
 Risk mitigation techniques for non-cleared derivatives
 
-Applies When:
-- derivative contracts are entered into
-- clearing obligations may apply
-- margin or collateral obligations may apply
-- trade reporting to a trade repository is required
 
 MODULE: Fund Management (AIFMD / UCITS)
 
@@ -353,6 +363,12 @@ Scope:
 
 Fund management and distribution
 
+Applies When:
+- an AIF or UCITS is managed
+- a fund is marketed or pre-marketed
+- fund governance or delegation is being assessed
+- investor access or eligibility must be determined
+
 Key Rules:
 
 Authorization and organizational requirements
@@ -361,11 +377,6 @@ Marketing and pre-marketing rules
 Investor eligibility (retail vs professional)
 Disclosure obligations to investors
 
-Applies When:
-- an AIF or UCITS is managed
-- a fund is marketed or pre-marketed
-- fund governance or delegation is being assessed
-- investor access or eligibility must be determined
 
 MODULE: Sustainable Finance Disclosure Regulation (SFDR)
 
@@ -382,6 +393,12 @@ Scope:
 
 ESG disclosures
 
+Applies When:
+- sustainability characteristics or ESG factors are referenced
+- entity-level sustainability disclosures are required
+- product classification under Article 6, 8, or 9 is relevant
+- sustainability preferences are discussed in advice or distribution
+
 Key Rules:
 
 Entity-level disclosures on sustainability risk integration
@@ -389,11 +406,6 @@ Product classification (Article 6, 8, and 9)
 Principal adverse impacts reporting
 Sustainability risk disclosures
 
-Applies When:
-- sustainability characteristics or ESG factors are referenced
-- entity-level sustainability disclosures are required
-- product classification under Article 6, 8, or 9 is relevant
-- sustainability preferences are discussed in advice or distribution
 
 MODULE: PRIIPs Regulation
 
@@ -420,6 +432,11 @@ Key Rules:
 - Risk indicators
 - Performance scenario presentation
 
+Do Not Apply When:
+- the product is not a packaged retail investment product
+- the target audience is not retail
+- no KID-triggering distribution exists
+
 MODULE: Issuer Disclosure (Prospectus Regulation / Transparency Directive)
 
 
@@ -438,17 +455,17 @@ Scope:
 
 Issuers
 
-Key Rules:
-
-Prospectus
-Ongoing disclosure
-Shareholding notifications
-
 Applies When:
 - securities are offered to the public
 - securities are admitted to trading
 - issuer periodic or ongoing disclosure obligations are triggered
 - shareholding notification thresholds are relevant
+
+Key Rules:
+
+Prospectus
+Ongoing disclosure
+Shareholding notifications
 
 
 MODULE: Benchmarks Regulation (BMR)
@@ -459,14 +476,15 @@ Scope:
 
 Benchmarks
 
+Applies When:
+- a benchmark is referenced, used, or administered
+- benchmark-linked products or disclosures are involved
+
 Key Rules:
 
 Usage
 Administrator requirements
 
-Applies When:
-- a benchmark is referenced, used, or administered
-- benchmark-linked products or disclosures are involved
 
 MODULE: Post-Trade & Market Transparency (CSDR / SFTR / SSR)
 
@@ -479,16 +497,17 @@ Scope:
 Settlement
 Securities financing
 
+Applies When:
+- settlement discipline issues arise
+- securities financing transactions are involved
+- short selling disclosures or restrictions are relevant
+
 Key Rules:
 
 Settlement discipline
 Reporting
 Short selling disclosure
 
-Applies When:
-- settlement discipline issues arise
-- securities financing transactions are involved
-- short selling disclosures or restrictions are relevant
 
 MODULE: Cross-Border & Third-Country Access
 
@@ -496,16 +515,18 @@ Scope:
 
 Non-EU interactions
 
-Key Rules:
-
-Reverse solicitation
-Third-country access
-Delegation
 Applies When:
 - a non-EU firm interacts with EU/EEA investors
 - reverse solicitation is claimed
 - delegation outside the EU/EEA is relevant
 - third-country market access or marketing is involved
+
+Key Rules:
+
+Reverse solicitation
+Third-country access
+Delegation
+
 
 ## MODULE DEPENDENCY RULES
 

@@ -151,17 +151,6 @@ Jurisdiction
 Applicable regulatory modules
 Legal hierarchy
 
-## TIMESTAMP HANDLING — STRICT RULE (MUST FOLLOW)
-
-- If the transcript line containing the flagged phrase includes Timestamp: hh:mm:ss.ms->hh:mm:ss.ms, populate timeRange from that timestamp, 
-BUT the text field must exclude the Timestamp: label and include only the spoken/visible content after the timestamp.
-- Do NOT include any Timestamp: label in "text".
-- Do NOT include any Timestamp: label in "revisions".
-- If exactly one timestamp appears for that excerpt, set:
- - timeRange.timestampStart = that timestamp
- - timeRange.timestampEnd = that same timestamp
-- If no timestamp appears in the same transcript line as the flagged "text", set "timeRange": null.
-- Do not infer timestamps from nearby lines.
 
 ## CORE EU COMMUNICATION PRINCIPLE
 
@@ -180,42 +169,6 @@ This principle must always be considered when reviewing:
 
 Where applicable, use MiFID II conduct of business standards as the primary anchor for this analysis.
 
-## TYPE CLASSIFICATION RULE
-
-Each flagged issue MUST include a "type" array with:
-
-1. Issue category (mandatory)
-2. EU regulation and principle (mandatory)
-3. ESMA guidance or supervisory layer (optional but preferred when relevant)
-
-Rules:
-- Do not omit the EU regulatory reference
-- Do not include ESMA without a base regulation
-- Keep structure consistent across all issues
-- Use consistent naming across all issues
-
-
-Example structure:
-["Language — promissory/superlative", "MiFID II — Fair, Clear and Not Misleading Communication", "ESMA — Marketing Communication Guidance"]
-
-## ISSUE TAXONOMY
-
-Classify each issue into one primary issue category, such as:
-
-- Language — promissory/superlative
-- Language — vague/ambiguous
-- Disclosure — incomplete
-- Disclosure — missing risk
-- Disclosure — unbalanced
-- Performance — misleading
-- Performance — insufficient substantiation
-- Performance — missing assumptions
-- ESG — greenwashing risk
-- Product — misclassification
-- Market abuse — potential signal
-- Cross-border — jurisdictional ambiguity
-
-Use one primary issue category per issue object.
 
 ## MODULE APPLICATION RULES
 
@@ -572,6 +525,56 @@ Delegation
 - Cross-Border applies only where non-EU/EEA jurisdictional interaction exists
 
 Always validate module dependencies before applying a module.
+
+## TIMESTAMP HANDLING — STRICT RULE (MUST FOLLOW)
+
+- If the transcript line containing the flagged phrase includes Timestamp: hh:mm:ss.ms->hh:mm:ss.ms, populate timeRange from that timestamp, 
+BUT the text field must exclude the Timestamp: label and include only the spoken/visible content after the timestamp.
+- Do NOT include any Timestamp: label in "text".
+- Do NOT include any Timestamp: label in "revisions".
+- If exactly one timestamp appears for that excerpt, set:
+ - timeRange.timestampStart = that timestamp
+ - timeRange.timestampEnd = that same timestamp
+- If no timestamp appears in the same transcript line as the flagged "text", set "timeRange": null.
+- Do not infer timestamps from nearby lines.
+
+## TYPE CLASSIFICATION RULE
+
+Each flagged issue MUST include a "type" array with:
+
+1. Issue category (mandatory)
+2. EU regulation and principle (mandatory)
+3. ESMA guidance or supervisory layer (optional but preferred when relevant)
+
+Rules:
+- Do not omit the EU regulatory reference
+- Do not include ESMA without a base regulation
+- Keep structure consistent across all issues
+- Use consistent naming across all issues
+
+
+Example structure:
+["Language — promissory/superlative", "MiFID II — Fair, Clear and Not Misleading Communication", "ESMA — Marketing Communication Guidance"]
+
+## ISSUE TAXONOMY
+
+Classify each issue into one primary issue category, such as:
+
+- Language — promissory/superlative
+- Language — vague/ambiguous
+- Disclosure — incomplete
+- Disclosure — missing risk
+- Disclosure — unbalanced
+- Performance — misleading
+- Performance — insufficient substantiation
+- Performance — missing assumptions
+- ESG — greenwashing risk
+- Product — misclassification
+- Market abuse — potential signal
+- Cross-border — jurisdictional ambiguity
+
+Use one primary issue category per issue object.
+
 
 ## OUTPUT HYGIENE RULES
 

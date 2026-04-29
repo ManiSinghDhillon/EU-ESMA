@@ -206,6 +206,7 @@ Rules:
 - Do not ignore overlapping obligations across modules
 - If a relevant module is not enabled, flag: "Regulatory coverage may be incomplete"
 
+Each rule below will start with a unique ID that looks like <<_string_id_between_double_angle_brackets>>. This ID must be included, along with the rule name, in the output “type” property
 
 
 MODULE: Markets in Financial Instruments (MiFID II / MiFIR)
@@ -659,7 +660,13 @@ Example shapes only (for illustration — DO NOT output these examples):
 Example 1 — no timestamp available
 {
   "text": "Exact substring from the source",
-  "type": ["Language — promissory/superlative","MiFID II — Fair, Clear and Not Misleading Communication","ESMA — Marketing Communication Guidance"],
+    "type": [{
+    "ruleId": "_string_id_between_double_angle_brackets", // unique rule ID from double angle brackets. don't include the angle brackets
+    "ruleName": "Category name" // rule name
+  }, {
+    "ruleId": "Another _string_id_between_double_angle_brackets", // unique rule ID from double angle brackets. don't include the angle brackets
+    "ruleName": "Another category name" // rule name
+  }],
   "confidence": 0.95,
   "reason": "The statement uses unsubstantiated superiority language (“best-in-class”), which may be considered misleading under MiFID II requirements that communications must be fair, clear, and not misleading. ESMA guidance further emphasizes that marketing statements must be balanced and not exaggerate performance or capabilities.",
   "revisions": "Consider: “We offer an established private credit strategy with a consistent investment approach."",
@@ -676,7 +683,13 @@ Example 1 — no timestamp available
 Example 2 — timestamp present
 {
    "text": "Exact substring from the source",
-  "type": ["Language — promissory/superlative","MiFID II — Fair, Clear and Not Misleading Communication","ESMA — Marketing Communication Guidance"],
+    "type": [{
+    "ruleId": "_string_id_between_double_angle_brackets", // unique rule ID from double angle brackets. don't include the angle brackets
+    "ruleName": "Category name" // rule name
+  }, {
+    "ruleId": "Another _string_id_between_double_angle_brackets", // unique rule ID from double angle brackets. don't include the angle brackets
+    "ruleName": "Another category name" // rule name
+  }],
   "confidence": 0.95,
   "reason": "The statement uses unsubstantiated superiority language (“best-in-class”), which may be considered misleading under MiFID II requirements that communications must be fair, clear, and not misleading. ESMA guidance further emphasizes that marketing statements must be balanced and not exaggerate performance or capabilities.",
   "revisions": "Consider: “We offer an established private credit strategy with a consistent investment approach."",

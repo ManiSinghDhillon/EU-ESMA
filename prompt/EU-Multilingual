@@ -265,6 +265,16 @@ Recordkeeping and reporting
 Transaction reporting to regulators
 Pre- and post-trade transparency
 
+Mandatory Performance Disclaimer Detection:
+- If a page or visual block contains historical performance data, return figures, yield figures,
+  or performance charts, and the phrase "past performance is not a reliable indicator of future results"
+  (or equivalent in the source language) is absent from that same page or bounded block, flag as:
+  Disclosure — missing risk
+- Confidence: 0.92
+- Do not flag if the disclaimer appears elsewhere on the same page in clearly legible form.
+- Apply this rule regardless of document type unless the document is explicitly a transaction 
+  confirmation or internal communication.
+
 
 Do Not Apply When:
 - no investment service or activity is provided
@@ -402,6 +412,24 @@ Do Not Apply When:
 - no sustainability or ESG characteristics are referenced
 - no sustainability-related disclosures are made
 - the content does not concern a financial product, financial market participant, or financial adviser within scope
+
+Greenwashing Trigger Language:
+Flag when the following terms are used as product descriptors without a stated SFDR Article 
+classification (6, 8, or 9) or supporting methodology on the same page:
+
+High-confidence triggers: "sustainable", "green", "responsible investing", "ESG-aligned",
+"impact investing", "net zero", "carbon neutral", "climate-aligned", "low carbon",
+"environmentally friendly", "socially responsible", "positive impact"
+
+Also flag when:
+- Art. 8 or Art. 9 label is used without corresponding disclosure of how sustainability 
+  characteristics are met
+- "ESG integration" or "ESG approach" is stated without defining what criteria are applied
+- A sustainability outcome claim is made without referencing a methodology or third-party data source
+
+Do not flag:
+- Accurate SFDR classification labels accompanied by required disclosure text
+- Standard sustainability risk warnings (e.g., "sustainability risk may negatively impact returns")
 
 
 MODULE: PRIIPs Regulation
@@ -551,7 +579,7 @@ Reverse solicitation
 Third-country access
 Delegation
 
-## MODULE Digital Operational Resilience Act (DORA)
+MODULE: Digital Operational Resilience Act (DORA)
 
 Regulation (EU) 2022/2554 on digital operational resilience for the financial sector
 
@@ -633,6 +661,36 @@ Classify each issue into one primary issue category, such as:
 
 Use one primary issue category per issue object.
 
+## PROMISSORY AND SUPERLATIVE LEXICON
+
+HIGH-CONFIDENCE triggers (confidence ≥ 0.90) — flag when used as a product, firm, or outcome claim:
+
+Absolute performance / capital claims:
+"guaranteed", "capital guaranteed", "capital protected" (unless legally verified),
+"risk-free", "no risk", "zero risk", "certain return", "assured return"
+
+Superiority / ranking claims:
+"best", "best-in-class", "top-performing", "number one", "#1", "market-leading",
+"unrivalled", "unmatched", "second to none", "industry-leading", "world-class",
+"market-beating", "outperforms the market"
+
+Promissory future language:
+"will deliver", "will achieve", "will outperform", "will generate", "will provide"
+
+Unqualified superlatives:
+"exceptional returns", "outstanding performance", "superior results",
+"unparalleled", "extraordinary", "unprecedented performance"
+
+BORDERLINE TERMS (confidence 0.71–0.85 — flag only when used as a superiority or outcome claim, not as scope description):
+"comprehensive", "robust", "proven", "established", "consistent", "strong",
+"solid", "resilient", "diversified" (when used as a performance claim)
+
+SAFE HARBOUR — Do NOT flag:
+"aims to", "seeks to", "targets", "has historically demonstrated", "may",
+"past performance is not a reliable indicator of future results",
+"the value of investments may go down as well as up",
+"for professional investors only", "subject to market conditions",
+"in accordance with applicable law"
 
 ## OUTPUT HYGIENE RULES
 
@@ -648,6 +706,10 @@ Use one primary issue category per issue object.
 - Suppress issues with confidence <= 0.70
 - Keep the reason concise and specific to the cited text
 - Do not duplicate the same issue on the same page and same visual region
+- Do NOT flag personally identifiable national identity references (Real ID), including 
+  national identity numbers, passport numbers, tax identification numbers, social security 
+  equivalents, or similar national ID references. These are handled by a separate internal 
+  system and must not appear in the issues array.
 
 ## CONSOLIDATION AND DE-DUPLICATION RULES
 
@@ -782,3 +844,20 @@ ESG — greenwashing risk:
 
 Cross-border — jurisdictional ambiguity:
 - Add: "This communication is directed only at persons in [jurisdiction]. It is not directed at persons in [excluded jurisdiction]."
+
+Disclosure — incomplete:
+- Identify what specific required element is missing (e.g., fees, risks, product classification)
+- Use conditional template: "If applicable, add: [specific required disclosure]"
+- Do not invent specific values; flag the absence and specify the category of missing information
+
+Market abuse — potential signal:
+- Do not propose a direct "rewrite" for market abuse signals; instead suggest process controls:
+  "Review this communication against insider list records before release."
+  "If inside information may be involved, consult compliance before further distribution."
+  "Consider whether a STOR filing obligation is triggered."
+
+Product — misclassification:
+- Identify the stated classification and the likely correct classification
+- Template: "The product is described as [stated type]. Verify whether [applicable regulation, 
+  e.g., PRIIPs / SFDR Art. X] classification is correct based on [specific product feature]."
+- Do not assert the correct classification; flag for verification.

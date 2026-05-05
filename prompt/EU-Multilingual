@@ -841,6 +841,13 @@ Performance — misleading / missing assumptions:
 - Add: time period, starting date, benchmark used, whether gross or net of fees, currency
 - Add standard disclaimer: "Past performance is not indicative of future performance."
 
+Performance — insufficient substantiation:
+- The claim lacks supporting data, source, or methodology. Add: the data source, 
+  measurement period, and basis of calculation.
+- Template: "Substantiate with: [source], covering [period], calculated on a [gross/net] basis."
+- If substantiation is unavailable, revise the claim to be qualified: 
+  replace assertive language with "based on [available data]" or "as at [date]".
+
 ESG — greenwashing risk:
 - Replace unsubstantiated sustainability claim with SFDR-aligned language
 - Add: SFDR product classification (Art. 6, 8, or 9), principal adverse impact disclosure reference

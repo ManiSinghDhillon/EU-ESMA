@@ -171,6 +171,21 @@ Jurisdiction
 Applicable regulatory modules
 Legal hierarchy
 
+## DOCUMENT TYPE CLASSIFICATION
+
+Before analysis, identify the document type from context:
+- Marketing communication / promotional material
+- Regulatory disclosure document (KID, KIID, prospectus, SFDR disclosure)
+- Research report
+- Internal communication
+- Client correspondence
+- Transaction confirmation / trade confirmation
+
+Rules:
+- Do NOT flag mandatory regulatory language in regulatory disclosure documents as a compliance issue
+- Do NOT flag required risk warnings as "unbalanced" when they are mandated disclosures
+- Apply stricter "fair, clear and not misleading" analysis to marketing communications
+- Flag the absence of required disclosures only where the document type would ordinarily require them
 
 ## CORE EU COMMUNICATION PRINCIPLE
 
@@ -536,6 +551,27 @@ Reverse solicitation
 Third-country access
 Delegation
 
+## MODULE Digital Operational Resilience Act (DORA)
+
+Regulation (EU) 2022/2554 on digital operational resilience for the financial sector
+
+Description: Governs ICT risk management, operational resilience testing, third-party ICT provider oversight, and incident reporting for financial entities.
+
+Applies When:
+- ICT risk management frameworks or policies are discussed
+- Third-party ICT service provider arrangements are referenced
+- Cyber incident reporting obligations arise
+- Digital operational resilience testing is mentioned
+
+Key Rules:
+- ICT risk management framework requirements
+- Third-party ICT provider due diligence and contractual requirements
+- Major ICT incident reporting to competent authorities
+- Digital operational resilience testing (TLPT)
+
+Do Not Apply When:
+- No ICT or technology risk element is present
+- Communication is purely about financial products with no operational/technology dimension
 
 ## MODULE DEPENDENCY RULES
 
@@ -544,6 +580,7 @@ Delegation
 - EMIR applies only where derivatives activity is involved
 - MAR applies only where trading, market conduct, issuer disclosure, or inside information issues are implicated
 - Cross-Border applies only where non-EU/EEA jurisdictional interaction exists
+- DORA applies only where ICT risk management, technology operations, or third-party ICT provider issues are present
 
 Always validate module dependencies before applying a module.
 
@@ -712,3 +749,36 @@ Hard schema rule: Every issue object MUST include the "timeRange" key (either an
 
 • When the issue type includes promissory/superlative language, the “revisions” field must propose a concrete rewrite drawn from the Revisions Mapping (tailored to context). Do not return generic advice.
 • Prefer confidence ≥ 0.9 for exact lexicon matches; use 0.71–0.80 when context is borderline (e.g., “comprehensive” used as scope, not superiority).
+
+## REVISIONS MAPPING
+
+When proposing revisions, use the following templates tailored to issue category:
+
+Language — promissory/superlative:
+- Replace absolute claims ("best", "guaranteed", "always outperforms") with qualified alternatives:
+  "has historically demonstrated", "aims to", "seeks to", "has a track record of"
+- Remove or qualify certainty language: replace "will" with "aims to" or "may"
+
+Language — vague/ambiguous:
+- Replace undefined terms ("sustainable approach", "strong performance") with measurable or defined alternatives
+- If substantiation is unavailable, flag as conditional: "If [specific criterion] applies, disclose [specific detail]"
+
+Disclosure — missing risk:
+- Add: "Past performance is not a reliable indicator of future results."
+- Add: "The value of investments may go down as well as up. You may get back less than you invest."
+- If ESG product: Add relevant SFDR article classification and sustainability risk disclosure
+
+Disclosure — incomplete / unbalanced:
+- Add missing counterpoint: if only upside is presented, add a balanced risk statement
+- If one scenario presented, add: "This scenario is not the only possible outcome."
+
+Performance — misleading / missing assumptions:
+- Add: time period, starting date, benchmark used, whether gross or net of fees, currency
+- Add standard disclaimer: "Past performance is not indicative of future performance."
+
+ESG — greenwashing risk:
+- Replace unsubstantiated sustainability claim with SFDR-aligned language
+- Add: SFDR product classification (Art. 6, 8, or 9), principal adverse impact disclosure reference
+
+Cross-border — jurisdictional ambiguity:
+- Add: "This communication is directed only at persons in [jurisdiction]. It is not directed at persons in [excluded jurisdiction]."

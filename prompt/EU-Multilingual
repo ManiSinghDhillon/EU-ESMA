@@ -267,13 +267,18 @@ Pre- and post-trade transparency
 
 Mandatory Performance Disclaimer Detection:
 - If a page or visual block contains historical performance data, return figures, yield figures,
-  or performance charts, and the phrase "past performance is not a reliable indicator of future results"
-  (or equivalent in the source language) is absent from that same page or bounded block, flag as:
-  Disclosure — missing risk
+  or performance charts, check for the phrase "past performance is not a reliable indicator of 
+  future results" (or equivalent in the source language) as follows:
+  
+  Text content: flag if the disclaimer is absent from the same page. Do not flag if it appears 
+  anywhere on that page in legible form, even outside the flagged block.
+  
+  Visual/image content: flag if the disclaimer is absent from within the same visual block 
+  (e.g., chart, table, or figure). Do not suppress solely because the disclaimer exists in 
+  the text layer of the same page.
+
 - Confidence: 0.92
-- Do not flag if the disclaimer appears elsewhere on the same page in clearly legible form.
-- Apply this rule regardless of document type unless the document is explicitly a transaction 
-  confirmation or internal communication.
+- Do not apply to transaction confirmations or internal communications.
 
 
 Do Not Apply When:
@@ -403,17 +408,12 @@ Applies When:
 
 Key Rules:
 
-Entity-level disclosures on sustainability risk integration
-Product classification (Article 6, 8, and 9)
-Principal adverse impacts reporting
-Sustainability risk disclosures
+- Entity-level disclosures on sustainability risk integration
+- Product classification (Article 6, 8, and 9)
+- Principal adverse impacts reporting
+- Sustainability risk disclosures
+- Greenwashing Trigger Language:
 
-Do Not Apply When:
-- no sustainability or ESG characteristics are referenced
-- no sustainability-related disclosures are made
-- the content does not concern a financial product, financial market participant, or financial adviser within scope
-
-Greenwashing Trigger Language:
 Flag when the following terms are used as product descriptors without a stated SFDR Article 
 classification (6, 8, or 9) or supporting methodology on the same page:
 
@@ -430,6 +430,12 @@ Also flag when:
 Do not flag:
 - Accurate SFDR classification labels accompanied by required disclosure text
 - Standard sustainability risk warnings (e.g., "sustainability risk may negatively impact returns")
+
+Do Not Apply When:
+- no sustainability or ESG characteristics are referenced
+- no sustainability-related disclosures are made
+- the content does not concern a financial product, financial market participant, or financial adviser within scope
+
 
 
 MODULE: PRIIPs Regulation
@@ -639,9 +645,6 @@ Rules:
 - Use consistent naming across all issues
 
 
-Example structure:
-["Language — promissory/superlative", "MiFID II — Fair, Clear and Not Misleading Communication", "ESMA — Marketing Communication Guidance"]
-
 ## ISSUE TAXONOMY
 
 Classify each issue into one primary issue category, such as:
@@ -830,7 +833,7 @@ Disclosure — missing risk:
 - Add: "The value of investments may go down as well as up. You may get back less than you invest."
 - If ESG product: Add relevant SFDR article classification and sustainability risk disclosure
 
-Disclosure — incomplete / unbalanced:
+Disclosure — unbalanced:
 - Add missing counterpoint: if only upside is presented, add a balanced risk statement
 - If one scenario presented, add: "This scenario is not the only possible outcome."
 

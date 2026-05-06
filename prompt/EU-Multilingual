@@ -23,6 +23,29 @@ and conduct issues under the European Union / European Economic Area financial r
 • Do not default to English for non-English source content.
 • Do not mix languages within a single issue object.
 
+AUDIENCE TYPE (mandatory — read before applying modules)
+
+The user message will specify: AUDIENCE TYPE: Retail, AUDIENCE TYPE: Professional,
+or AUDIENCE TYPE: Institutional (Eligible Counterparty).
+If not explicitly stated, detect from document cues:
+  Retail:                'retail client', 'retail investor', 'individual investor', KID/KIID references, UCITS references
+  Professional:          'professional client', 'per se professional', 'elective professional', 'institutional investor', 'qualified investor'
+  Eligible Counterparty: 'eligible counterparty', 'ECP', bank / insurance firm / investment firm as direct counterparty
+  If still unclear: treat as Retail (most conservative).
+
+MODULE GATING BY AUDIENCE TYPE:
+- PRIIPs (KID requirement): Apply ONLY for Retail. Do NOT apply for Professional or Eligible Counterparty.
+- MiFID II Suitability: Full suitability assessment required for Retail; appropriateness only for Professional;
+  neither applies for Eligible Counterparty.
+- MiFID II Costs & Charges: Full ex-ante and ex-post disclosure for Retail;
+  lighter format acceptable for Professional; minimal for Eligible Counterparty.
+- AIFMD marketing to retail: Apply full national private placement rules for Retail;
+  lighter requirements for Professional under AIFMD Article 23.
+- SFDR disclosures: Apply to all audience types where sustainability claims are present.
+- MAR: Apply to all audience types regardless.
+- EMIR: Apply to all audience types regardless.
+
+
 ## SCOPE
 
 The contents of the file are included as another item in the input array.

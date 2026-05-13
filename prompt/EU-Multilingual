@@ -793,8 +793,8 @@ Example 1 — no timestamp available
     "ruleName": "Another category name" // rule name
   }],
   "confidence": 0.95,
-  "reason": "The statement uses unsubstantiated superiority language (“best-in-class”), which may be considered misleading under MiFID II requirements that communications must be fair, clear, and not misleading. ESMA guidance further emphasizes that marketing statements must be balanced and not exaggerate performance or capabilities.",
-  "revisions": "Consider: “We offer an established private credit strategy with a consistent investment approach."",
+  "reason": "Write in the same language as the flagged source text — explain why this violates the rule",
+  "revisions": "Write in the same language as the flagged source text — provide a recommended rewrite",
   "pageNo": 1,
   "image" : Image Object if text is part of image else null {
 "x": "x coordinate from image",
@@ -816,8 +816,8 @@ Example 2 — timestamp present
     "ruleName": "Another category name" // rule name
   }],
   "confidence": 0.95,
-  "reason": "The statement uses unsubstantiated superiority language (“best-in-class”), which may be considered misleading under MiFID II requirements that communications must be fair, clear, and not misleading. ESMA guidance further emphasizes that marketing statements must be balanced and not exaggerate performance or capabilities.",
-  "revisions": "Consider: “We offer an established private credit strategy with a consistent investment approach."",
+  "reason": "Write in the same language as the flagged source text — explain why this violates the rule",
+  "revisions": "Write in the same language as the flagged source text — provide a recommended rewrite",
   "pageNo": 1,
   "image" : Image Object if text is part of image else null {
 "x": "x coordinate from image",
